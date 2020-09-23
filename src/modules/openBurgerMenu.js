@@ -14,6 +14,19 @@ const openBurgerMenu = () => {
         if (target.matches('.close-menu')) {
             popupMenu.style.visibility = 'hidden';
             popupDialogMenu.style.right = '0px';
+        } else if (target.matches('.menu-link')) {
+            event.preventDefault();
+
+            popupMenu.style.visibility = 'hidden';
+            popupDialogMenu.style.right = '0px';
+
+            const blockId = target.getAttribute('href').substr(1);
+            if (blockId) {
+                document.getElementById(blockId).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         }
     });
 };
