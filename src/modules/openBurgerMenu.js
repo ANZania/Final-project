@@ -22,7 +22,16 @@ const openBurgerMenu = () => {
             popupDialogMenu.style.top = '0px';
         } else {
             popupDialogMenu.style.right = '0px';
-        } else if (target.matches('.menu-link')) {
+        }
+    };
+
+    menuIcon.addEventListener('click', openDialogMenu);
+
+    popupDialogMenu.addEventListener('click', event => {
+        const target = event.target;
+
+        if (target.matches('.close-menu')) closeDialogMenu();
+        if (target.matches('.menu-link')) {
             event.preventDefault();
 
             popupMenu.style.visibility = 'hidden';
@@ -36,15 +45,6 @@ const openBurgerMenu = () => {
                 });
             }
         }
-
-    }
-
-    menuIcon.addEventListener('click', openDialogMenu);
-
-    popupDialogMenu.addEventListener('click', event => {
-        const target = event.target;
-
-        if (target.matches('.close-menu')) closeDialogMenu();
     });
 };
 
