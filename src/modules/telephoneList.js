@@ -8,13 +8,13 @@ const addPhoneProlapse = () => {
     };
 
     const togglePhone = () => {
-        if (phoneNumberSecond.style.opacity == 0) {
+        if (phoneNumberSecond.style.opacity === '0' || !phoneNumberSecond.style.opacity) {
             phoneNumberAccord.style.top = '30px';
             phoneNumberSecond.style.opacity = 1;
 
             rotateArrow(180);
-            
-        } else if (phoneNumberSecond.style.opacity == 1) {
+
+        } else if (phoneNumberSecond.style.opacity === '1') {
             phoneNumberAccord.style.top = '0px';
             phoneNumberSecond.style.opacity = 0;
 
