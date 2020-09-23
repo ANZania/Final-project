@@ -9,7 +9,7 @@ const openBurgerMenu = () => {
         popupMenu.style.visibility = 'visible';
 
         if (width <= 576) {
-            popupDialogMenu.style.top = '545px';
+            popupDialogMenu.style.top = '725px';
         } else {
             popupDialogMenu.style.right = '639px';
         }
