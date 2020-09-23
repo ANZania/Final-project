@@ -1,5 +1,5 @@
 'use strict';
 
-import start from './modules/start';
+import addPhoneProlapse from './modules/telephoneList';
 
-start();
+addPhoneProlapse();
