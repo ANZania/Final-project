@@ -3,7 +3,8 @@ const openBurgerMenu = () => {
         popupMenu = document.querySelector('.popup-menu'),
         popupDialogMenu = popupMenu.querySelector('.popup-dialog-menu');
 
-    let width = document.documentElement.clientWidth;
+    let width = document.documentElement.clientWidth,
+        opened = false;
 
     const openDialogMenu = () => {
         popupMenu.style.visibility = 'visible';
@@ -15,6 +16,8 @@ const openBurgerMenu = () => {
         } else {
             popupDialogMenu.style.right = '639px';
         }
+
+        opened = true;
     };
 
     const closeDialogMenu = () => {
@@ -23,6 +26,7 @@ const openBurgerMenu = () => {
         popupDialogMenu.style.top = '0px';
         popupDialogMenu.style.right = '0px';
 
+        opened = false;
     };
 
     menuIcon.addEventListener('click', openDialogMenu);
@@ -48,8 +52,10 @@ const openBurgerMenu = () => {
 
     window.addEventListener('resize', () => {
         width = document.documentElement.clientWidth;
-        closeDialogMenu();
-        openDialogMenu();
+        if (opened) {
+            closeDialogMenu();
+            openDialogMenu();
+        }
     });
 };
 
