@@ -45,6 +45,8 @@ const openBurgerMenu = () => {
             }
         }
     });
+
+    
 };
 
 export default openBurgerMenu;
