@@ -24,7 +24,7 @@ const phoneMask = () => {
             if (item.value.length === 15 && event.data !== null) {
                 item.value += '-';
             }
-           
+
         });
     });
 };
