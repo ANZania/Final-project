@@ -31,11 +31,10 @@ const openBurgerMenu = () => {
         const target = event.target;
 
         if (target.matches('.close-menu')) closeDialogMenu();
-        if (target.matches('.menu-link')) {
+        if (target.matches('.menu-link') && !target.closest('.link-list-menu')) {
             event.preventDefault();
 
-            popupMenu.style.visibility = 'hidden';
-            popupDialogMenu.style.right = '0px';
+            closeDialogMenu();
 
             const blockId = target.getAttribute('href').substr(1);
             if (blockId) {
