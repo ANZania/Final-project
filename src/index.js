@@ -7,6 +7,7 @@ import addFullPriceList from './modules/fullPriceList';
 import phoneMask from './modules/phoneMask';
 import togglePrivacy from './modules/togglePrivacy';
 import formulaItemDescribe from './modules/formulaItemDescribe';
+import sendForms from './modules/sendForm';
 
 addPhoneProlapse();
 openBurgerMenu();
@@ -15,3 +16,4 @@ addFullPriceList();
 phoneMask();
 togglePrivacy();
 formulaItemDescribe();
+sendForms();
