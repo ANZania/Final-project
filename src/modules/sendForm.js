@@ -12,10 +12,10 @@ const sendForms = () => {
         });
     };
 
-    const showError = (form) => {
+    const showError = (form, error) => {
         form.insertAdjacentHTML('beforebegin', `
             <div class="form-alarm-msg" style="font-size: 7; color: red; width: 350px; ">
-            Произошла неизвестная ошибка. Пожалуйста, попробуйте позже.</div>`);
+            ${error}.</div>`);
 
         setTimeout(() => {
             const el = form.parentNode.querySelector('.form-alarm-msg');
@@ -39,8 +39,10 @@ const sendForms = () => {
             event.preventDefault();
 
             const el = form.parentNode.querySelector('.form-alarm-msg');
-            el.style.display = 'none';
-            
+            if (el) {
+                el.style.display = 'none';
+            }
+
             const inputTel = form.querySelector('input[name="phone"]');
             const inputName = form.querySelector('input[name="name"]');
             const checkBox = form.querySelector('input[type="checkbox"]');
@@ -78,12 +80,12 @@ const sendForms = () => {
                 postData(body)
                     .then(response => {
                         if (response.status !== 200) {
-                            throw new Error('Status network is not 200');
+                            throw new Error('Произошла неизвестная ошибка. Пожалуйста, попробуйте позже.');
                         }
                         outputData();
                     })
-                    .catch(() => {
-                        showError(form);
+                    .catch((error) => {
+                        showError(form, error);
                     });
             } else {
                 showAlarm(form);
