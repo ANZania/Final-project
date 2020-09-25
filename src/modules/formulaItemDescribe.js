@@ -7,6 +7,8 @@ const formulaDescribe = () => {
         item.addEventListener('mouseover', () => {
             const height = item.getBoundingClientRect().top,
                 itemHeight = item.offsetHeight;
+            
+                item.classList.add('active-item');
 
             if (height < (itemHeight + 130)) {
                 item.parentNode.style.zIndex=999;
@@ -35,6 +37,8 @@ const formulaDescribe = () => {
             }
         });
         item.addEventListener('mouseout', () => {
+            item.classList.remove('active-item');
+
             popups[index].style.visibility = 'hidden';
             item.parentNode.style.zIndex = 1;
             popups[index].style.zIndex = 1;
