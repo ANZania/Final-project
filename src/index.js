@@ -8,6 +8,7 @@ import phoneMask from './modules/phoneMask';
 import togglePrivacy from './modules/togglePrivacy';
 import formulaItemDescribe from './modules/formulaItemDescribe';
 import sendForms from './modules/sendForm';
+import renderPopup from './modules/renderPopup';
 
 addPhoneProlapse();
 openBurgerMenu();
@@ -17,3 +18,4 @@ phoneMask();
 togglePrivacy();
 formulaItemDescribe();
 sendForms();
+renderPopup();
