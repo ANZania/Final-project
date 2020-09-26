@@ -9,6 +9,8 @@ import togglePrivacy from './modules/togglePrivacy';
 import formulaItemDescribe from './modules/formulaItemDescribe';
 import sendForms from './modules/sendForm';
 import renderPopup from './modules/renderPopup';
+import toggleConsult from './modules/toggleConsult';
+//import mobileFormulaSlider from './modules/formulaSlider';
 
 addPhoneProlapse();
 openBurgerMenu();
@@ -19,3 +21,5 @@ togglePrivacy();
 formulaItemDescribe();
 sendForms();
 renderPopup();
+toggleConsult();
+//mobileFormulaSlider();

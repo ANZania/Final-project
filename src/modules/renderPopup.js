@@ -13,7 +13,6 @@ const renderPopup = () => {
         addStyles();
         let navListPopupRepair = document.querySelector('.nav-list-popup-repair');
         const popupRepairTypesContentHeadDate = document.querySelector('.popup-repair-types-content__head-date');
-        console.log(response);
         response.forEach((item, index) => {
             if (index !== 0) {
                 navListPopupRepair.insertAdjacentHTML('beforeend', `
@@ -25,7 +24,6 @@ const renderPopup = () => {
         });
         navListPopupRepair = document.querySelector('.nav-list-popup-repair');
         const popupRepairTypesNavItem = navListPopupRepair.querySelectorAll('.popup-repair-types-nav__item');
-        console.log(popupRepairTypesNavItem);
         popupRepairTypesNavItem.forEach(elem => {
             elem.addEventListener('click', () => {
                 const switchInner = document.getElementById('switch-inner');
@@ -37,7 +35,6 @@ const renderPopup = () => {
                 popupRepairTypesContentTableList.textContent = '';
                 popupRepairTypesContentTableList.append(document.createElement('tbody'));
                 const tbody = popupRepairTypesContentTableList.querySelector('tbody');
-                console.log(elem.textContent);
                 let list;
                 response.forEach(item => {
                     if (item.title === elem.textContent) {
