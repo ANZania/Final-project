@@ -11,6 +11,7 @@ import sendForms from './modules/sendForm';
 import renderPopup from './modules/renderPopup';
 import toggleConsult from './modules/toggleConsult';
 import accord from './modules/accord';
+import tabsWork from './modules/tabsWork';
 //import mobileFormulaSlider from './modules/formulaSlider';
 
 addPhoneProlapse();
@@ -24,4 +25,5 @@ sendForms();
 renderPopup();
 toggleConsult();
 accord();
+tabsWork();
 //mobileFormulaSlider();
