@@ -10,6 +10,7 @@ import formulaItemDescribe from './modules/formulaItemDescribe';
 import sendForms from './modules/sendForm';
 import renderPopup from './modules/renderPopup';
 import toggleConsult from './modules/toggleConsult';
+import accord from './modules/accord';
 //import mobileFormulaSlider from './modules/formulaSlider';
 
 addPhoneProlapse();
@@ -22,4 +23,5 @@ formulaItemDescribe();
 sendForms();
 renderPopup();
 toggleConsult();
+accord();
 //mobileFormulaSlider();
