@@ -12,6 +12,7 @@ import renderPopup from './modules/renderPopup';
 import toggleConsult from './modules/toggleConsult';
 import accord from './modules/accord';
 import tabsWork from './modules/tabsWork';
+import sliderRepair from './modules/sliderRepair';
 //import mobileFormulaSlider from './modules/formulaSlider';
 
 addPhoneProlapse();
@@ -26,4 +27,5 @@ renderPopup();
 toggleConsult();
 accord();
 tabsWork();
+sliderRepair();
 //mobileFormulaSlider();
