@@ -1,12 +1,20 @@
 const phoneMask = () => {
-    let count = 0;
     const inputNumber = document.querySelectorAll('input[name="phone"]');
 
     inputNumber.forEach(item => {
+
         item.addEventListener('focus', () => {
-            if (count === 0) {
+            const alarmMsg = item.closest('form').parentElement.querySelectorAll('.form-alarm-msg');
+
+            if (alarmMsg.length > 0) {
+                alarmMsg.forEach((item) => {
+                    item.style.display = 'none';
+                })
+                
+            }
+
+            if (item.value === '') {
                 item.value = '+7 (';
-                count++;
             }
         });
         item.addEventListener('input', (event) => {
@@ -24,6 +32,8 @@ const phoneMask = () => {
             if (item.value.length === 15 && event.data !== null) {
                 item.value += '-';
             }
+
+        
 
         });
     });

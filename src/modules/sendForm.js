@@ -17,10 +17,16 @@ const sendForms = () => {
             <div class="form-alarm-msg" style="font-size: 7; color: red; width: 350px; ">
             ${error}.</div>`);
 
+        form.querySelectorAll('input').forEach((item) => {
+            item.value = '';
+        })
+
         setTimeout(() => {
-            const el = form.parentNode.querySelector('.form-alarm-msg');
-            el.style.display = 'none';
-        }, 5000);
+            const el = form.parentElement.querySelectorAll('.form-alarm-msg');
+            el.forEach((item) => {
+                item.style.display = 'none';
+            })
+        }, 3000);
     };
 
     const showAlarm = (form) => {
@@ -28,20 +34,21 @@ const sendForms = () => {
             <div class="form-alarm-msg" style="font-size: 7; color: red; width: 350px; ">
             Пожалуйста, проверьте номер и согласитесь с политикой конфиденциальности!</div>`);
 
+        form.querySelectorAll('input').forEach((item) => {
+            item.value = '';
+        })
+
         setTimeout(() => {
-            const el = form.parentNode.querySelector('.form-alarm-msg');
-            el.style.display = 'none';
-        }, 5000);
+            const el = form.parentElement.querySelector('.form-alarm-msg');
+            el.forEach((item) => {
+                item.style.display = 'none';
+            })
+        }, 3000);
     }
 
     forms.forEach(form => {
         form.addEventListener('submit', event => {
             event.preventDefault();
-
-            const el = form.parentNode.querySelector('.form-alarm-msg');
-            if (el) {
-                el.style.display = 'none';
-            }
 
             const inputTel = form.querySelector('input[name="phone"]');
             const inputName = form.querySelector('input[name="name"]');
