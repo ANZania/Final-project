@@ -14,7 +14,7 @@ import accord from './modules/accord';
 import tabsWork from './modules/tabsWork';
 import sliderRepair from './modules/sliderRepair';
 //import sliderFormula from './modules/formulaSlider';
-//import doctabs from './modules/docTabs';
+import docTabs from './modules/docTabs';
 import sliderPortfolio from './modules/sliderPortfolio';
 
 addPhoneProlapse();
@@ -30,6 +30,6 @@ toggleConsult();
 accord();
 tabsWork();
 sliderRepair();
-//docTabs();
+docTabs();
 //sliderFormula();
 sliderPortfolio();
