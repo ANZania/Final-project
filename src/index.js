@@ -13,7 +13,9 @@ import toggleConsult from './modules/toggleConsult';
 import accord from './modules/accord';
 import tabsWork from './modules/tabsWork';
 import sliderRepair from './modules/sliderRepair';
-//import mobileFormulaSlider from './modules/formulaSlider';
+//import sliderFormula from './modules/formulaSlider';
+//import doctabs from './modules/docTabs';
+import sliderPortfolio from './modules/sliderPortfolio';
 
 addPhoneProlapse();
 openBurgerMenu();
@@ -28,4 +30,6 @@ toggleConsult();
 accord();
 tabsWork();
 sliderRepair();
-//mobileFormulaSlider();
+//docTabs();
+//sliderFormula();
+sliderPortfolio();
