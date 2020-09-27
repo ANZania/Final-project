@@ -16,6 +16,7 @@ import sliderRepair from './modules/sliderRepair';
 //import sliderFormula from './modules/formulaSlider';
 import docTabs from './modules/docTabs';
 import sliderPortfolio from './modules/sliderPortfolio';
+import sliderRewievs from './modules/sliderRewiews';
 
 addPhoneProlapse();
 openBurgerMenu();
@@ -33,3 +34,4 @@ sliderRepair();
 docTabs();
 //sliderFormula();
 sliderPortfolio();
+sliderRewievs();
