@@ -26,13 +26,27 @@ const sliderPortfolio = () => {
             designsList.querySelector('.active').classList.remove('active');
             item.classList.add('active');
             designSlide.style.display = 'none';
-            console.log(index);
             designSlide = designsSlider.querySelector(`.designs-slider__style${index + 1}`);
             designSlide.style.display = 'block';
             designsSliderStyleSlide = designSlide.querySelectorAll('.designs-slider__style-slide');
             designsSliderWrap.querySelector('.visible').classList.remove('visible');
             previewBlock[index].classList.add('visible');
             previewBlockItem = previewBlock[index].querySelectorAll('.preview-block__item-inner');
+            previewBlockItem.forEach((elem, index) => {
+                elem.removeEventListener('click', () => {
+                    prevSlide(designsSliderStyleSlide, previewBlockItem, currentSlide);
+                    currentSlide = index;
+                    nextSlide(designsSliderStyleSlide, previewBlockItem, currentSlide);
+                });
+            });
+            previewBlockItem = previewBlock[index].querySelectorAll('.preview-block__item-inner');
+            previewBlockItem.forEach((elem, index) => {
+                elem.addEventListener('click', () => {
+                    prevSlide(designsSliderStyleSlide, previewBlockItem, currentSlide);
+                    currentSlide = index;
+                    nextSlide(designsSliderStyleSlide, previewBlockItem, currentSlide);
+                });
+            });
             sliderCounterContentTotal.textContent = designsSliderStyleSlide.length;
             currentSlide = 0;
             sliderCounterContentCurrent.textContent = currentSlide + 1;
@@ -102,6 +116,14 @@ const sliderPortfolio = () => {
             sliderCounterContentCurrent.textContent = currentSlide + 1;
         }
         nextSlide(designsSliderStyleSlide, previewBlockItem, currentSlide);
+    });
+
+    previewBlockItem.forEach((elem, index) => {
+        elem.addEventListener('click', () => {
+            prevSlide(designsSliderStyleSlide, previewBlockItem, currentSlide);
+            currentSlide = index;
+            nextSlide(designsSliderStyleSlide, previewBlockItem, currentSlide);
+        });
     });
 
     designsSliderWrap.addEventListener('mouseover', (event) => {
