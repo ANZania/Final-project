@@ -19,6 +19,7 @@ import sliderPortfolio from './modules/sliderPortfolio';
 import sliderRewievs from './modules/sliderRewiews';
 import togglePopupPortfolio from './modules/togglePortfolio';
 import partnersCarousel from './modules/partnersCarousel';
+import sliderProblems from './modules/sliderProblems';
 
 addPhoneProlapse();
 openBurgerMenu();
@@ -38,4 +39,5 @@ docTabs();
 sliderPortfolio();
 sliderRewievs();
 togglePopupPortfolio();
-partnersCarousel()
+partnersCarousel();
+sliderProblems();

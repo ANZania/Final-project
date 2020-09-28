@@ -59,7 +59,6 @@ const partnersCarousel = () => {
             if (count > maxCount) {
                 count = 0;
             }
-            console.log(count, slideWidth);
             partnersSlider.style.transform = `translateX(-${count * slideWidth}px)`;
         }
     });
