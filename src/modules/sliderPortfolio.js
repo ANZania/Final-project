@@ -1,4 +1,5 @@
 const sliderPortfolio = () => {
+    const popupPortfolio = document.querySelector('.popup-portfolio');
     const designsNavItemBase = document.querySelectorAll('.designs-nav__item_base');
     const designsList = document.getElementById('designs-list');
     const designsSlider = document.querySelector('.designs-slider');
