@@ -16,6 +16,11 @@ const docTabs = () => {
                 flex-wrap: inherit !important;
             }
         }
+        @media (max-width: 575px) {
+            .transparency-slider-wrap {
+                width: 100%;
+        
+            }
         `;
         document.head.append(style);
     };
