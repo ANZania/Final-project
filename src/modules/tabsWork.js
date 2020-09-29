@@ -9,6 +9,12 @@ const tabsWork = () => {
     let indexSlide = 0;
     let marginCount = 0;
 
+    imgSlider.forEach((item, index) => {
+        if (index !== 0) {
+            item.style.display = 'none';
+        }
+    });
+
     schemeNavItem.forEach((item, index) => {
         item.addEventListener('click', () => {
             schemeList.querySelector('.active').classList.remove('active');
@@ -22,7 +28,6 @@ const tabsWork = () => {
     });
 
     navWrap.addEventListener('click', event => {
-        console.log(111);
         const target = event.target;
         if (target.closest('#nav-arrow-scheme_right')) {
             if (marginCount < 900) {

@@ -1,17 +1,20 @@
 const footerScroll = () => {
-    const buttonFooter = document.querySelector('.button-footer');
 
+    document.body.addEventListener('click', (event) => {
+        let target = event.target;
 
-    buttonFooter.addEventListener('click', event => {
-        event.preventDefault();
+        if (target.closest('.button-footer')) {
+            target = target.closest('.button-footer');
+            event.preventDefault();
 
-        const blockId = buttonFooter.querySelector('a').getAttribute('href').substr(1);
-        if (blockId) {
-            document.getElementById(blockId).scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        };
+            const blockId = target.querySelector('a').getAttribute('href').substr(1);
+            if (blockId) {
+                document.getElementById(blockId).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
     });
 };
 

@@ -34,7 +34,7 @@ const partnersCarousel = () => {
             flex: 0 0 33%;
         }
         `;
-        document.head.append(style);
+        document.head.appendChild(style);
     };
 
     setStyles();

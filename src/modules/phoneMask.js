@@ -10,7 +10,6 @@ const phoneMask = () => {
                 alarmMsg.forEach((item) => {
                     item.style.display = 'none';
                 })
-                
             }
 
             if (item.value === '') {
@@ -32,9 +31,6 @@ const phoneMask = () => {
             if (item.value.length === 15 && event.data !== null) {
                 item.value += '-';
             }
-
-        
-
         });
     });
 };

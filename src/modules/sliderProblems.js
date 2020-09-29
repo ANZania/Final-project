@@ -52,7 +52,7 @@ const sliderProblems = () => {
             
         }
         `;
-        document.head.append(style);
+        document.head.appendChild(style);
     };
 
     setStyles();

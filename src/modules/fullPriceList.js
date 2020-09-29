@@ -1,11 +1,10 @@
 const addFullPriceList = () => {
     const priceList = document.querySelector('.popup-repair-types'),
-        menuLink = document.querySelector('.link-list-menu'),
-        repairLink = document.querySelector('.link-list-repair'),
         popupMenu = document.querySelector('.popup-menu'),
         popupDialogMenu = popupMenu.querySelector('.popup-dialog-menu'),
-        width = document.documentElement.clientWidth;
-
+        width = document.documentElement.clientWidth,
+        navListPopupRepair = document.querySelector('.nav-list-popup-repair');
+    let marginCount = 0;
 
     const openPopup = () => {
         priceList.style.visibility = 'visible';
@@ -19,26 +18,35 @@ const addFullPriceList = () => {
             popupDialogMenu.style.right = '0px';
         }
     };
-    const addCloseAbility = () => {
-        priceList.addEventListener('click', (event) => {
-            const target = event.target;
-            if (target.matches('.close') || !target.closest('.popup-dialog-repair-types')) {
-                priceList.style.visibility = 'hidden';
-            }
-        })
-    }
 
     document.body.addEventListener('click', (event) => {
         const target = event.target;
 
+        if (target.closest('#nav-arrow-popup-repair_right')) {
+            if (marginCount < 2550) {
+                marginCount += 510;
+                navListPopupRepair.style.transform = `translateX(-${marginCount}px)`;
+            }
+        }
+
+        if (target.closest('#nav-arrow-popup-repair_left')) {
+            if (marginCount > 0) {
+                marginCount -= 510;
+                navListPopupRepair.style.transform = `translateX(-${marginCount}px)`;
+            }
+        }
+
         if (target.closest('.link-list-menu')) {
             openPopup();
             closeDialogMenu();
-            addCloseAbility();
         } else if (target.closest('.link-list-repair')) {
             openPopup();
-            addCloseAbility();
         }
+
+        if ((target.matches('.close') || !target.closest('.popup-dialog-repair-types')) && target.closest('.popup-repair-types')) {
+            priceList.style.visibility = 'hidden';
+        }
+
     })
 
 }

@@ -13,10 +13,11 @@ const formulaDescribe = () => {
                     font-weight: 300;
                 }
             `;
-            document.head.append(style);
+            document.head.appendChild(style);
         };
 
         setStyles();
+
         icons.forEach((item, index) => {
             item.classList.remove('active-item');
             popups[index].visibility = 'none';

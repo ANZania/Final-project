@@ -1,15 +1,16 @@
 const toggleConsult = () => {
-    const buttonWide = document.querySelectorAll('.button_wide');
     const popupConsultation = document.querySelector('.popup-consultation');
-    buttonWide.forEach(item => {
-        item.addEventListener('click', () => {
-            popupConsultation.style.visibility = 'visible';
-        });
-    });
 
-    popupConsultation.addEventListener('click', event => {
-        if (!event.target.closest('.feedback-wrap') || event.target.closest('.close-consultation')) {
-            popupConsultation.style.visibility = 'hidden';
+    document.body.addEventListener('click', (event) => {
+        const target = event.target;
+
+        if (target.closest('.button_wide')) {
+            popupConsultation.style.visibility = 'visible';
+        }
+        if (target.closest('.popup-consultation')) {
+            if (!target.closest('.feedback-wrap') || target.closest('.close-consultation')) {
+                popupConsultation.style.visibility = 'hidden';
+            }
         }
     });
 };

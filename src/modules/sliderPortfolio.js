@@ -16,8 +16,6 @@ const sliderPortfolio = () => {
     let interval;
     sliderCounterContentTotal.textContent = designsSliderStyleSlide.length;
 
-    //preview-block__item-inner
-
     designsNavItemBase.forEach((item, index) => {
         if (index !== 0) {
             designsSlider.querySelector(`.designs-slider__style${index + 1}`).style.display = 'none';

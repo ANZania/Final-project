@@ -1,5 +1,13 @@
 'use strict';
 
+import 'nodelist-foreach-polyfill';
+import elementClosest from 'element-closest';
+import "@babel/polyfill";
+import 'fetch-polyfill';
+import 'ie11-scroll-into-view';
+import 'cross-browser-polyfill';
+elementClosest(window);
+
 import addPhoneProlapse from './modules/telephoneList';
 import openBurgerMenu from './modules/openBurgerMenu';
 import footerScroll from './modules/footerScroll';
@@ -45,11 +53,9 @@ sliderProblems();
 sliderWorks();
 window.addEventListener('resize', () => {
     formulaItemDescribe();
-    sliderRepair();
     docTabs();
     mobileFormulaSlider();
     sliderPortfolio();
-    sliderRewievs();
     partnersCarousel();
     sliderProblems();
     sliderWorks();

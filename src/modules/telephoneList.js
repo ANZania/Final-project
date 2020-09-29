@@ -22,8 +22,12 @@ const addPhoneProlapse = () => {
         }
     };
 
-    arrow.addEventListener('click', togglePhone);
-
-}
+    document.body.addEventListener('click', (event) => {
+        const target = event.target;
+        if (target.closest('.header-contacts__arrow')) {
+            togglePhone();
+        }
+    });
+};
 
 export default addPhoneProlapse;

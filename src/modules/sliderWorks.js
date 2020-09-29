@@ -45,7 +45,6 @@ const sliderWorks = () => {
                 carousel();
             });
 
-            //slideOpen(slides);
         },
         mobileVersion = () => {
             const portfolioSlider = document.querySelector('.portfolio-slider-mobile.tablet-hide.desktop-hide'),
@@ -93,7 +92,6 @@ const sliderWorks = () => {
                 carousel();
             });
 
-            //slideOpen(slides);
 
         };
     if (window.screen.width > 575) {

@@ -31,25 +31,26 @@ const openBurgerMenu = () => {
 
     menuIcon.addEventListener('click', openDialogMenu);
 
-    popupDialogMenu.addEventListener('click', event => {
+    document.body.addEventListener('click', (event) => {
         const target = event.target;
 
-        if (target.matches('.close-menu')) closeDialogMenu();
-        if (target.matches('.menu-link') && !target.closest('.link-list-menu')) {
-            event.preventDefault();
+        if (target.closest('.popup-dialog-menu')) {
+            if (target.matches('.close-menu')) closeDialogMenu();
+            if (target.matches('.menu-link') && !target.closest('.link-list-menu')) {
+                event.preventDefault();
 
-            closeDialogMenu();
+                closeDialogMenu();
 
-            const blockId = target.getAttribute('href').substr(1);
-            if (blockId) {
-                document.getElementById(blockId).scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+                const blockId = target.getAttribute('href').substr(1);
+                if (blockId) {
+                    document.getElementById(blockId).scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             }
         }
     });
-
     window.addEventListener('resize', () => {
         width = document.documentElement.clientWidth;
         if (opened) {

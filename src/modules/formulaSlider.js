@@ -67,8 +67,6 @@ const mobileFormulaSlider = () => {
         }
         changeSlide();
     });
-
-    document.body.addEventListener('resize', mobileFormulaSlider);
 };
 
 
