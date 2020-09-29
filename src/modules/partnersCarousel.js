@@ -11,9 +11,11 @@ const partnersCarousel = () => {
         slideWidth = 389;
     } else {
         maxCount = partnersSliderSlide.length - 1;
-        slideWidth = 134;
+        slideWidth = 200;
     }
 
+    partnersSlider.parentElement.style.overflow  = 'hidden';
+    partnersSlider.parentElement.style.display = 'flex';
     const setStyles = () => {
         const style = document.createElement('style');
         style.textContent = `
@@ -31,16 +33,14 @@ const partnersCarousel = () => {
             max-width: 100% !important;
             flex: 0 0 33%;
         }
-        .wrapper {
-            overflow: hidden;
-        }
         `;
         document.head.append(style);
     };
 
     setStyles();
 
-    partnersSlider.style.transform = '';
+
+    partnersSlider.style.transform = 'translateX(50px)';
 
     document.body.addEventListener('click', event => {
         const target = event.target;
@@ -51,7 +51,13 @@ const partnersCarousel = () => {
                 count = maxCount;
             }
 
-            partnersSlider.style.transform = `translateX(-${count * slideWidth}px)`;
+            if (count === 0 && !(window.screen.width > 575)) {
+                partnersSlider.style.transform = `translateX(50px)`;
+            } else if (count === maxCount && !(window.screen.width > 575)) {
+                partnersSlider.style.transform = `translateX(-850px)`;
+            } else {
+                partnersSlider.style.transform = `translateX(-${count * slideWidth}px)`;
+            }
         }
 
         if (target.closest('#partners-arrow_right')) {
@@ -59,7 +65,13 @@ const partnersCarousel = () => {
             if (count > maxCount) {
                 count = 0;
             }
-            partnersSlider.style.transform = `translateX(-${count * slideWidth}px)`;
+            if (count === 0 && !(window.screen.width > 575)) {
+                partnersSlider.style.transform = `translateX(50px)`;
+            } else if (count === maxCount && !(window.screen.width > 575)) {
+                partnersSlider.style.transform = `translateX(-850px)`;
+            } else {
+                partnersSlider.style.transform = `translateX(-${count * slideWidth}px)`;
+            }
         }
     });
 

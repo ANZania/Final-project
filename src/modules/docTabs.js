@@ -37,7 +37,7 @@ const docTabs = () => {
             nextButton = document.querySelector('.popup-arrow_transparency_right');
 
         const maxCount = popupTransparencySlider.length - 1,
-            slideWidth = popupTransparencySlider[0].offsetWidth;
+            slideWidth = popupTransparencySlider[0].offsetHeight;
 
         sliderTotal.textContent = popupTransparencySlider.length;
 

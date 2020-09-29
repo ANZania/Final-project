@@ -43,3 +43,14 @@ togglePopupPortfolio();
 partnersCarousel();
 sliderProblems();
 sliderWorks();
+window.addEventListener('resize', () => {
+    formulaItemDescribe();
+    sliderRepair();
+    docTabs();
+    mobileFormulaSlider();
+    sliderPortfolio();
+    sliderRewievs();
+    partnersCarousel();
+    sliderProblems();
+    sliderWorks();
+});
