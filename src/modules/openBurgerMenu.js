@@ -9,8 +9,12 @@ const openBurgerMenu = () => {
     const openDialogMenu = () => {
         popupMenu.style.visibility = 'visible';
 
-        if (width <= 576) {
-            popupDialogMenu.style.top = '582px';
+        if (width >= 375 && (width <= 430)) {
+            popupDialogMenu.style.top = (document.body.clientHeight / 17) + 'px';
+        } else if (width > 430 && (width <= 576)) {
+            popupDialogMenu.style.top = (document.body.clientHeight / 17) + 'px';
+        } else if (width <= 576) {
+            popupDialogMenu.style.top = (document.body.clientHeight / 17) + 'px';
         } else if (width <= 1024) {
             popupDialogMenu.style.right = '549px';
         } else {
@@ -34,8 +38,8 @@ const openBurgerMenu = () => {
     document.body.addEventListener('click', (event) => {
         const target = event.target;
 
-        if (target.closest('.popup-dialog-menu')) {
-            if (target.matches('.close-menu')) closeDialogMenu();
+        if (target.closest('.popup-menu')) {
+            if (target.matches('.close-menu') || !target.closest('.popup-dialog-menu'))  closeDialogMenu();
             if (target.matches('.menu-link') && !target.closest('.link-list-menu')) {
                 event.preventDefault();
 

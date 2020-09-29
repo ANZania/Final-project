@@ -36,15 +36,15 @@ const sendForms = () => {
 
         form.querySelectorAll('input').forEach((item) => {
             item.value = '';
-        })
+        });
 
         setTimeout(() => {
-            const el = form.parentElement.querySelector('.form-alarm-msg');
-            el.forEach((item) => {
+            const el = form.parentElement.querySelectorAll('.form-alarm-msg');
+            el.forEach(item => {
                 item.style.display = 'none';
-            })
+            });
         }, 3000);
-    }
+    };
 
     forms.forEach(form => {
         form.addEventListener('submit', event => {
@@ -55,6 +55,10 @@ const sendForms = () => {
             const checkBox = form.querySelector('input[type="checkbox"]');
             let body;
             if (checkBox.checked && inputTel.value.length === 18) {
+                if (inputName && inputName.value === '') {
+                    showAlarm(form);
+                    return;
+                }
                 if (inputName) {
                     body = {
                         tel: inputTel.value,

@@ -29,6 +29,7 @@ import togglePopupPortfolio from './modules/togglePortfolio';
 import partnersCarousel from './modules/partnersCarousel';
 import sliderProblems from './modules/sliderProblems';
 import sliderWorks from './modules/sliderWorks';
+import problemDescribe from './modules/problemItemDescribe';
 
 addPhoneProlapse();
 openBurgerMenu();
@@ -51,6 +52,7 @@ togglePopupPortfolio();
 partnersCarousel();
 sliderProblems();
 sliderWorks();
+problemDescribe();
 window.addEventListener('resize', () => {
     formulaItemDescribe();
     docTabs();
